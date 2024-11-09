@@ -9,6 +9,7 @@ namespace theLongGame
         {
             string playerName;
             int playerScore = 0;
+            string filePath;
 
             Console.WriteLine("Hello and welcome to...");
             Console.WriteLine("THE LONG GAME");
@@ -16,11 +17,18 @@ namespace theLongGame
             Console.WriteLine("Enter your name and press 'ENTER'");
             playerName = Console.ReadLine();
 
-            Console.WriteLine("Welcome " + playerName + "! The game is about to begin");
-            Console.WriteLine("Your goal is to gain as many points as possible.");
-            Console.WriteLine("You will gain 1 point for every keypress you make on the keyboard");
-            Console.WriteLine("When you are done playing you can press 'ENTER' to end the game");
-            Console.WriteLine("Are you ready to start?");
+            filePath = playerName + ".txt";
+
+            if (File.Exists(filePath) {
+                Console.WriteLine("Welcome back" + playerName + "!");
+            }
+            else
+            {
+                Console.WriteLine("Welcome " + playerName + "!");
+            }
+
+            Console.WriteLine("Your goal is to gain as many points as possible by pressing keys.");
+            Console.WriteLine("When you are done playing, press 'ENTER' to end the game");
             Console.WriteLine("Press any key to begin");
 
             while (true)
